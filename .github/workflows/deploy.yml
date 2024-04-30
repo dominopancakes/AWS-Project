@@ -16,11 +16,14 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2  # Update with your S3 bucket region
-
- #     - name: Install AWS CLI  # Install the AWS CLI
+      
+      - name: Build website (if necessary)
+        run: npm run build  # Example build command, adjust for your project
+ 
+ #    - name: Install AWS CLI  # Install the AWS CLI
  #       run: |
  #         curl -sL https://awscli.amazonaws.com/v2/install-awscli.sh | bash -
 
       - name: Sync website to S3
-        run: aws s3 sync / --delete s3://frankiethesausage.co.uk/  # Replace with your S3 bucket name and directory
+        run: aws s3 sync build --delete s3://frankiethesausage.co.uk/  # Replace with your S3 bucket name and directory
 
