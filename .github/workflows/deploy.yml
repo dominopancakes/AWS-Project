@@ -1,0 +1,34 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configure AWS credentials  # Use Secrets Manager
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: eu-west-3  # Update with your S3 bucket region
+          secret-arn: arn:aws:secretsmanager:eu-west-3:751749476736:secret:GH-S3User-Qyu0aT  # Replace with your secret ARN
+          secret-name: GH-S3User  # Replace with your secret name
+
+      - name: Get AWS Secret Access Key  # Retrieve secret value
+        uses: aws-actions/secrets-manager-get-secret-value@v1
+        id: get-secret-key
+        with:
+          secret-id: arn:aws:secretsmanager:eu-west-3:751749476736:secret:GH-S3User-Qyu0aT  # Replace with your secret ARN
+
+      - name: Install AWS CLI
+        run: |
+          curl -sL https://awscli.amazonaws.com/v2/install-awscli.sh | bash -
+
+      - name: Sync website to S3
+        env:
+          AWS_SECRET_ACCESS_KEY: ${{ steps.get-secret-key.outputs.secretValue }}  # Use retrieved secret value
+        run: aws s3 sync --delete dist s3://frankiethesausage.co.uk/  # Replace with your S3 bucket name and directory
