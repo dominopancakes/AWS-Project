@@ -21,12 +21,6 @@ jobs:
  #       run: |
  #         curl -sL https://awscli.amazonaws.com/v2/install-awscli.sh | bash -
 
-      - uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --acl public-read --follow-symlinks --delete
-        env:
-          AWS_S3_BUCKET: s3://frankiethesausage.co.uk/
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          SOURCE_DIR: 'public'    # Optional: Defaults to entire repository
+      - name: Sync website to S3
+        run: aws s3 sync / --delete s3://frankiethesausage.co.uk/  # Replace with your S3 bucket name and directory
 
