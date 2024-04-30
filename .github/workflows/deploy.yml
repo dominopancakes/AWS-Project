@@ -17,9 +17,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2  # Update with your S3 bucket region
 
-      - name: Install AWS CLI  # Install the AWS CLI
-        run: |
-          curl -sL https://awscli.amazonaws.com/v2/install-awscli.sh | bash -
+ #     - name: Install AWS CLI  # Install the AWS CLI
+ #       run: |
+ #         curl -sL https://awscli.amazonaws.com/v2/install-awscli.sh | bash -
 
       - name: Sync website to S3
         run: aws s3 sync --delete dist s3://frankiethesausage.co.uk/  # Replace with your S3 bucket name and directory
