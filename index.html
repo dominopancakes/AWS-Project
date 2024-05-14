@@ -88,34 +88,17 @@
     <hr>
     <br>
     
-    <form id="orderForm" onsubmit="submitForm(event)">
-        <label for="firstName">First Name:</label><br>
-        <input type="text" id="firstName" name="first_name" required><br>
-        <label for="lastName">Last Name:</label><br>
-        <input type="text" id="lastName" name="last_name" required><br>
-        <label for="orderQty">Order Quantity:</label><br>
-        <input type="number" id="orderQty" name="order_qty" required><br><br>
-        <button type="submit">Submit</button>
+    <form action="https://90m8wkg9yh.execute-api.eu-west-2.amazonaws.com/test" method="get">
+        <input type="text" name="first_name" id="first_name">
+        <label for="first_name">What is your first name?</label>
+        <br>
+        <input type="text" name="last_name" id="last_name">
+        <label for="last_name">What is your last name?</label>
+        <br>
+        <input type="text" name="order_qty" id="order_qty">
+        <label for="order_qty">How many items do you want to order?</label>
+        <br>
+        <input type="submit">
     </form>
-
-    <script>
-        function submitForm(event) {
-            event.preventDefault(); // Prevent default form submission
-            const form = document.getElementById('orderForm');
-            const formData = new FormData(form);
-            
-            const queryParams = new URLSearchParams(formData).toString();
-            const url = 'https://90m8wkg9yh.execute-api.eu-west-2.amazonaws.com/test' + queryParams; // Replace YOUR_LAMBDA_FUNCTION_ENDPOINT with your actual endpoint
-            
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    // Handle response data
-                    console.log(data);
-                    alert(data.message); // Show a message received from the Lambda function
-                })
-                .catch(error => console.error('Error:', error));
-        }
-    </script>
 </body>
 </html>
