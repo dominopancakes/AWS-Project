@@ -88,7 +88,7 @@
     <hr>
     <br>
     
-    <form id="orderForm" action="https://90m8wkg9yh.execute-api.eu-west-2.amazonaws.com/test">
+    <form id="orderForm" method="get" action="https://90m8wkg9yh.execute-api.eu-west-2.amazonaws.com/test">
         <input type="text" name="first_name" placeholder="First Name">
         <input type="text" name="last_name" placeholder="Last Name">
         <input type="number" name="order_qty" placeholder="Order Quantity">
@@ -98,23 +98,5 @@
         <button type="submit">Submit Order</button>
     </form>
 
-    <!-- <script>  
-      document.getElementById("orderForm").addEventListener("submit", function(event) {
-        event.preventDefault();  // Prevent default form submission
-      
-        // Capture user input from visible fields
-        const firstName = document.getElementById("firstName").value;
-        const lastName = document.getElementById("lastName").value;
-        const orderQty = document.getElementById("order_qty").value;
-      
-        // Populate hidden fields with captured values
-        document.getElementById("hiddenFirstName").value = firstName;
-        document.getElementById("hiddenLastName").value = lastName;
-        document.getElementById("hiddenOrderQty").value = orderQty;
-      
-        // Submit the form with populated hidden fields
-        this.submit();
-      });
-    </script> -->
 </body>
 </html>
