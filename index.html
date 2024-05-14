@@ -105,7 +105,7 @@
             const formData = new FormData(form);
             
             const queryParams = new URLSearchParams(formData).toString();
-            const url = 'YOUR_LAMBDA_FUNCTION_ENDPOINT?' + queryParams; // Replace YOUR_LAMBDA_FUNCTION_ENDPOINT with your actual endpoint
+            const url = 'https://90m8wkg9yh.execute-api.eu-west-2.amazonaws.com/test' + queryParams; // Replace YOUR_LAMBDA_FUNCTION_ENDPOINT with your actual endpoint
             
             fetch(url)
                 .then(response => response.json())
