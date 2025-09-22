@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A sausage and ball appreciation site featuring Frankie the Dachshund.">
+  <meta name="keywords" content="Sausages, Dachshund, Balls, HTML Tutorial">
+  <meta name="author" content="Frankie">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="media/sausage.png">
+  <link rel="stylesheet" href="main.css">
+  <title>Frankie the Long Haired Mini-Dachshund</title>
+</head>
+
+<body>
+  <nav class="navbar" aria-label="Main navigation">
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/ai_improved.html">AI improved</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="http://www.longboyscout.com">Scout's Page</a></li>
+      <li><a href="https://frankiescout.z33.web.core.windows.net/" target="_blank" rel="noopener">Azure Static Site</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Welcome to Frankie's Super Sausage Server</h1>
+    <h2>A playful HTML tutorial starring everyone's favourite long-haired mini-dachshund.</h2>
+  </header>
+
+  <main>
+    <section>
+      <p>The <code>&lt;hr&gt;</code> tag above creates a horizontal line to break up content. This paragraph uses <code>&lt;p&gt;</code> tags, which are not numbered like headings but can be styled individually using IDs or classes.</p>
+
+      <p>HTML lets us style text with tags like <strong>&lt;b&gt;</strong> for bold, <em>&lt;i&gt;</em> for italics, <sub>subscript</sub>, and <sup>superscript</sup>.</p>
+
+      <figure>
+        <img src="media/htmlpexample.JPG" alt="Sample HTML paragraph code" width="600">
+        <figcaption>Example of styled paragraph elements.</figcaption>
+      </figure>
+
+      <p>Use <code>&lt;a&gt;</code> tags with <code>href</code> attributes to create links:</p>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Dachshund">Link to Wikipedia (same tab)</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Dachshund" target="_blank" rel="noopener">Link to Wikipedia (new tab)</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Frankie's Favourite Foods</h3>
+      <ul>
+        <li>Sausages</li>
+        <li>Steak</li>
+        <li>Chicken</li>
+        <li>Ice Cream</li>
+      </ul>
+
+      <h3>Frankie's Favourite Toys</h3>
+      <ol>
+        <li>Ball</li>
+        <li>Ball</li>
+        <li>Ball</li>
+      </ol>
+
+      <figure>
+        <img src="/media/lists.JPG" alt="HTML list code example" width="200">
+        <figcaption>Code for unordered and ordered lists.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h3>Image Layout with Tables</h3>
+      <table class="frankietab">
+        <tr>
+          <td><img src="media/mates.jpg" alt="Frankie playing with friends" width="250"></td>
+          <td><img src="media/pickmeup.jpg" alt="Frankie asking to be picked up" width="250"></td>
+          <td><img src="media/icecream.jpg" alt="Frankie enjoying ice cream" height="250"></td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h3>Frankie in Action</h3>
+      <video class="frankievid" width="480" height="640" controls>
+        <source src="media/wiggle.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section>
+      <h3>Understanding CSS</h3>
+      <p>CSS can be applied in three ways: <strong>Inline</strong>, <strong>Internal</strong>, and <strong>External</strong>. Here's an example of an internal rule:</p>
+      <pre><code>h1 { color: green; font-size: 16px; }</code></pre>
+
+      <figure>
+        <img src="media/internalcss.JPG" alt="Internal CSS example" width="300">
+        <figcaption>CSS rule inside the <code>&lt;head&gt;</code> block.</figcaption>
+      </figure>
+
+      <p class="rules">To style individual elements, assign a class and target it in your CSS:</p>
+      <div class="codepics">
+        <img src="media/cssclasses.JPG" alt="HTML with class attributes" width="300">
+        <img src="media/cssclassrules.JPG" alt="CSS class selectors" width="300">
+        <img src="media/cssclassbrowser.JPG" alt="Browser output with styled classes" width="300">
+      </div>
+    </section>
+
+    <section>
+      <h3>Place an Order</h3>
+      <form id="orderForm" method="get" action="https://9jbk98kp2f.execute-api.eu-west-2.amazonaws.com/1">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+
+        <label for="order_qty">Order Quantity:</label>
+        <input type="number" id="order_qty" name="order_qty" placeholder="Order Quantity" min="1" required>
+
+        <button type="submit">Submit Order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <hr>
+    <p>&copy; 2025 Frankie the Dachshund. All rights reserved.</p>
+  </footer>
+</body>
+</html>
